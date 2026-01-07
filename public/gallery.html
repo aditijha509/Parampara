@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Archive - Parampara</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Parampara</h1>
+                <p class="tagline">Preserving Living Traditions</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Explore Map</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="paths.html">Heritage Paths</a></li>
+                <li><a href="quest.html">Discovery Quest</a></li>
+                <li><a href="trails.html">Heritage Trails</a></li>
+                <li><a href="chat.html">Talk to Elder</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="gallery-container">
+        <div class="gallery-header">
+            <h2>Visual Patterns Archive</h2>
+            <p>Explore traditional art forms, embroidery patterns, and crafts from rural India</p>
+            <button id="add-item-btn" class="btn btn-primary">Add New Item</button>
+        </div>
+
+        <div class="filter-bar">
+            <input type="text" id="search-input" placeholder="Search patterns, villages, or crafts..." class="search-input">
+            <select id="type-filter" class="filter-select">
+                <option value="all">All Types</option>
+                <option value="visual">Visual Patterns</option>
+                <option value="audio">Audio Stories</option>
+                <option value="story">Stories</option>
+            </select>
+        </div>
+
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- Items will be loaded dynamically -->
+        </div>
+    </main>
+
+    <!-- Add Item Modal -->
+    <div id="add-item-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Cultural Item</h3>
+                <button class="close-btn" id="close-modal">×</button>
+            </div>
+            <form id="add-item-form" class="modal-form">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select name="type" required>
+                        <option value="visual">Visual Pattern</option>
+                        <option value="audio">Audio Story</option>
+                        <option value="story">Story</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Location/Village</label>
+                    <input type="text" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" name="imageUrl">
+                </div>
+                <div class="form-group">
+                    <label>Audio URL (if applicable)</label>
+                    <input type="url" name="audioUrl">
+                </div>
+                <div class="form-group">
+                    <label>Tags (comma-separated)</label>
+                    <input type="text" name="tags" placeholder="e.g., embroidery, festival, story">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/gallery.js"></script>
+</body>
+</html>
+

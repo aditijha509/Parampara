@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Quest - Parampara</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/quest.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Parampara</h1>
+                <p class="tagline">Preserving Living Traditions</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Explore Map</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="paths.html">Heritage Paths</a></li>
+                <li><a href="quest.html" class="active">Discovery Quest</a></li>
+                <li><a href="trails.html">Heritage Trails</a></li>
+                <li><a href="chat.html">Talk to Elder</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="quest-container">
+        <div class="quest-header">
+            <h2>The Discovery Quest</h2>
+            <p>Complete scavenger hunts to unlock digital badges and learn about hidden cultural treasures</p>
+        </div>
+
+        <div class="quest-dashboard">
+            <div class="user-profile">
+                <h3>Your Progress</h3>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="badge-count">0</span>
+                        <span class="stat-label">Badges Earned</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="quest-completed">0</span>
+                        <span class="stat-label">Quests Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="check-ins">0</span>
+                        <span class="stat-label">Villages Visited</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="badges-section">
+                <h3>Your Badges</h3>
+                <div id="badges-grid" class="badges-grid">
+                    <!-- Badges will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="quests-section">
+            <h3>Available Quests</h3>
+            <div id="quests-list" class="quests-list">
+                <!-- Quests will be loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/quest.js"></script>
+</body>
+</html>
+

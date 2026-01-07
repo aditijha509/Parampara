@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Trails - Parampara</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/trails.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Parampara</h1>
+                <p class="tagline">Preserving Living Traditions</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Explore Map</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="paths.html">Heritage Paths</a></li>
+                <li><a href="quest.html">Discovery Quest</a></li>
+                <li><a href="trails.html" class="active">Heritage Trails</a></li>
+                <li><a href="chat.html">Talk to Elder</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="trails-container">
+        <div class="trails-header">
+            <h2>Heritage Trails & Local Hosts</h2>
+            <p>Plan responsible visits to villages, meet cultural hosts, and support local artisans</p>
+        </div>
+
+        <div id="trails-list" class="trails-list">
+            <!-- Trails will be loaded dynamically -->
+        </div>
+    </main>
+
+    <!-- Trail Detail Modal -->
+    <div id="trail-detail-modal" class="modal">
+        <div class="modal-content trail-detail">
+            <div class="modal-header">
+                <h3 id="trail-detail-title">Trail Details</h3>
+                <button class="close-btn" id="close-trail-modal">×</button>
+            </div>
+            <div id="trail-detail-content" class="trail-detail-content">
+                <!-- Trail details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/trails.js"></script>
+</body>
+</html>
+

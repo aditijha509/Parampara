@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Map - Parampara</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Parampara</h1>
+                <p class="tagline">Preserving Living Traditions</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html" class="active">Explore Map</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="paths.html">Heritage Paths</a></li>
+                <li><a href="quest.html">Discovery Quest</a></li>
+                <li><a href="trails.html">Heritage Trails</a></li>
+                <li><a href="chat.html">Talk to Elder</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="map-container">
+        <div class="map-header">
+            <h2>Digital Time-Travel: Explore Rural Heritage</h2>
+            <p>Click on villages to discover their unique traditions, festivals, and crafts</p>
+            <div class="map-controls">
+                <button id="toggle-heatmap" class="btn btn-secondary">Toggle Heatmap</button>
+                <button id="toggle-sound" class="btn btn-secondary">Ambient Sounds: ON</button>
+            </div>
+        </div>
+        
+        <div id="map" class="map-view"></div>
+        
+        <div id="village-info" class="village-info-panel">
+            <div class="info-header">
+                <h3 id="village-name">Select a Village</h3>
+                <button id="close-info" class="close-btn">×</button>
+            </div>
+            <div id="info-content" class="info-content">
+                <p>Click on a village marker to see details</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts/map.js"></script>
+</body>
+</html>
+

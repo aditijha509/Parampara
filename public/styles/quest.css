@@ -1,0 +1,214 @@
+/* Discovery Quest Page Styles */
+
+.quest-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quest-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.quest-header h2 {
+    color: var(--warm-beige);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(45, 24, 16, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.quest-header p {
+    color: var(--wheat-yellow);
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(45, 24, 16, 0.6);
+    font-weight: 600;
+}
+
+.quest-dashboard {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+    border: 3px solid var(--accent-color);
+}
+
+.user-profile h3 {
+    color: var(--text-strong);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(212, 165, 116, 0.2);
+    border-radius: var(--border-radius);
+    border: 2px solid var(--accent-color);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--terracotta);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.badges-section {
+    margin-top: 2rem;
+}
+
+.badges-section h3 {
+    color: var(--earth-brown);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.badge-card {
+    background: rgba(212, 165, 116, 0.2);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--accent-color);
+}
+
+.badge-card:hover {
+    transform: translateY(-5px);
+    background: rgba(212, 165, 116, 0.3);
+    border-color: var(--terracotta);
+}
+
+.badge-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.badge-card h4 {
+    color: var(--text-strong);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.badge-card p {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.badge-card.locked {
+    opacity: 0.5;
+}
+
+.quests-section {
+    margin-top: 3rem;
+}
+
+.quests-section h3 {
+    color: var(--warm-beige);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 3px 3px 6px rgba(45, 24, 16, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.quests-list {
+    display: grid;
+    gap: 2rem;
+}
+
+.quest-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--accent-color);
+}
+
+.quest-card h4 {
+    color: var(--text-strong);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.quest-card p {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.quest-objectives {
+    margin: 1.5rem 0;
+}
+
+.objective-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.objective-item.completed {
+    background: rgba(46, 204, 113, 0.2);
+}
+
+.objective-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.objective-checkbox.completed {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.quest-reward {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(244, 162, 97, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.quest-reward h5 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+

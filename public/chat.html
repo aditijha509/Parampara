@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to an Elder - Parampara</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/chat.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Parampara</h1>
+                <p class="tagline">Preserving Living Traditions</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="map.html">Explore Map</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="paths.html">Heritage Paths</a></li>
+                <li><a href="quest.html">Discovery Quest</a></li>
+                <li><a href="trails.html">Heritage Trails</a></li>
+                <li><a href="chat.html" class="active">Talk to Elder</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="chat-container">
+        <div class="chat-header">
+            <h2>Talk to an Elder</h2>
+            <p>Ask our AI Curator about rural traditions, crafts, festivals, and stories from our archive</p>
+        </div>
+
+        <div class="chat-interface">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-avatar">👴</div>
+                    <div class="message-content">
+                        <p>Namaste! I'm a cultural curator who has learned from all the stories in our archive. Ask me about rural traditions, why people paint their doors blue, the meaning behind Kantha embroidery, or any village festival. What would you like to know?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask about traditions, crafts, festivals..." class="chat-input">
+                <button id="send-btn" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+
+        <div class="suggested-questions">
+            <h3>Suggested Questions</h3>
+            <div class="question-chips">
+                <button class="question-chip" data-question="Tell me a story about why people in villages paint their doors blue">Why are doors painted blue?</button>
+                <button class="question-chip" data-question="What is Kantha embroidery?">What is Kantha?</button>
+                <button class="question-chip" data-question="Tell me about rural festivals">Rural Festivals</button>
+                <button class="question-chip" data-question="What are some traditional crafts?">Traditional Crafts</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/chat.js"></script>
+</body>
+</html>
+

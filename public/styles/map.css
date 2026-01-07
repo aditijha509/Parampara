@@ -1,0 +1,129 @@
+/* Map Page Styles */
+
+.map-container {
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+.map-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.map-header h2 {
+    color: var(--warm-beige);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(45, 24, 16, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.map-header p {
+    color: var(--wheat-yellow);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(45, 24, 16, 0.6);
+    font-weight: 600;
+}
+
+.map-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.map-view {
+    height: 600px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    position: relative;
+    background: var(--card-bg);
+    border: 3px solid var(--accent-color);
+}
+
+.village-info-panel {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin: 0 auto;
+    display: none;
+    border: 3px solid var(--accent-color);
+}
+
+.village-info-panel.active {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.info-header h3 {
+    color: var(--text-strong);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.info-content {
+    line-height: 1.8;
+}
+
+.info-content p {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.village-details {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    background: rgba(212, 165, 116, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--terracotta);
+}
+
+.detail-item h4 {
+    color: var(--text-strong);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.detail-item p {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Leaflet Map Customization */
+:global(.leaflet-container) {
+    background: var(--card-bg) !important;
+}
+
+:global(.leaflet-popup-content-wrapper) {
+    background: var(--card-bg) !important;
+    color: var(--text-light) !important;
+}
+
+:global(.leaflet-popup-tip) {
+    background: var(--card-bg) !important;
+}
+

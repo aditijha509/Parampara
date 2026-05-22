@@ -27,14 +27,6 @@ A community-driven digital archive for preserving rural cultural heritage. Param
 - Node.js (v14 or higher)
 - npm (Node Package Manager)
 
-### Fork the Repository
-Click the **Fork** button on GitHub to create a copy under your account.
-
-### Clone the Repository
-```bash
-git clone https://github.com/YOUR-USERNAME/Parampara.git
- ```
-
 ### Installation
 
 1. **Clone or navigate to the project directory**
@@ -122,14 +114,42 @@ Plan responsible visits to villages. Get contact information for local hosts, le
 Ask questions about rural traditions, crafts, festivals, and stories. The AI curator draws from the archive to provide answers.
 
 
-## 🤝 Contributing
+## 💡 How You Can Contribute?
 
-This is a community-driven project. Contributions are welcome! Areas for contribution:
-- Adding more sample data
-- Improving UI/UX
-- Adding new features
-- Writing documentation
-- Testing and bug fixes
+| Category | Description |
+| :--- | :--- |
+| ✏️ **Fix Typos** | Improve writing and fix documentation errors |
+| 🎨 **Design** | Make it look better and prettier |
+| 📝 **Content** | Add new guides and tutorials |
+| 🐛 **Bugs** | Find and fix bugs in the code |
+| 💡 **Ideas** | Share awesome ideas for new features |
+
+---
+
+## 📋 Submitting Your Changes
+
+### Step 1: Fork the repo
+### Step 2: Create a New Branch
+```bash
+git checkout -b feature/your-feature-name
+```
+### Step 3: Make Your Changes
+Implement your updates following project guidelines.
+### Step 4: Test Locally
+Ensure everything works correctly before committing.
+### Step 5: Commit Your Work
+```bash
+git add .
+git commit -m "Brief description of your changes"
+```
+### Step 6: Push to GitHub
+```bash
+git push origin feature/your-feature-name
+```
+### Step 7: Create a Pull Request
+Go to GitHub and click "Create Pull Request". Done! 🚀
+
+---
 
 ## ⭐ Star the Repo!
 

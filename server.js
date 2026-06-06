@@ -35,6 +35,7 @@ app.use(
     )
 );
 
+
 // Initialize Data
 initializeSampleData();
 
@@ -82,6 +83,7 @@ app.get("/api/map-style", async (req, res) => {
     res.json(style);
 });
 
+
 // 404 Middleware
 app.use(notFound);
 
@@ -90,6 +92,10 @@ app.use(errorHandler);
 
 //map key
 
+//custom 404 route
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "./public", "404.html"));
+});
 
 // Start Server
 app.listen(PORT, () => {

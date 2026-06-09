@@ -51,11 +51,15 @@
 
 .trails-list {
     display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+ 
+    gap: 1.5rem;
+    
 }
 
 .trail-card:hover {
     transform: translateY(-5px);
+    border: 3px solid var(--accent-color);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
@@ -71,6 +75,10 @@
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
+}
+
+.trail-card h3:hover{
+    text-decoration: underline;
 }
 
 .trail-card-location {
@@ -108,11 +116,17 @@
     font-size: 0.9rem;
 }
 
-.trail-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
+ .trail-actions {
+     display: flex;
+     flex-direction: column;
+     gap: 0.75rem;
+     margin-top: auto;
+ }
+
+ .trail-actions .btn {
+     width: 100%;
+     text-align: center;
+ }
 
 .trail-detail {
     max-width: 900px;
@@ -235,8 +249,16 @@
     .dos-donts {
         grid-template-columns: 1fr;
     }
+        .trails-list {
+            grid-template-columns: 1fr;
+        }
 }
 
+@media (max-width: 1024px) {
+    .trails-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 /* Back To Top Button */
 #backToTopBtn {
     position: fixed;

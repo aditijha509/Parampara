@@ -6,12 +6,44 @@ let heatmapLayer = null;
 let ambientSoundEnabled = true;
 let currentSound = null;
 let currentTileLayer;
-
+let heatmapMarkers = [];
 
 let currentLanguage =
     localStorage.getItem("language") || "en";
 
+document.addEventListener('DOMContentLoaded', () => {
 
+    const selector = document.getElementById("language-selector");
+    selector.value = currentLanguage;
+
+    // selector.addEventListener("change", (e) => {
+    //     currentLanguage = e.target.value;
+    //     localStorage.setItem("language", currentLanguage);
+
+    //     // Re-apply language labels on existing style
+    //     setMapLanguage(currentLanguage);
+    //     addVillageMarkers(); // re-render markers with new language
+    //     translatePage();
+    // });
+    selector.addEventListener("change", (e) => {
+
+    currentLanguage = e.target.value;
+
+    localStorage.setItem("language", currentLanguage);
+
+    if (map && map.isStyleLoaded()) {
+        setMapLanguage(currentLanguage);
+    }
+
+    addVillageMarkers();
+    translatePage();
+});
+
+    initializeMap();       // map must come first
+    setupEventListeners();
+    loadCulturalItems();
+    translatePage();
+});
 
 const sampleVillages = [
 {
@@ -172,138 +204,124 @@ function translatePage() {
             : t.soundOff;
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     initializeMap();
-//     setupEventListeners();
-//     loadCulturalItems();
-// });
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const selector =
-        document.getElementById("language-selector");
-
-    selector.value = currentLanguage;
-
-    // selector.addEventListener("change", (e) => {
-
-    //     currentLanguage = e.target.value;
-
-    //     localStorage.setItem(
-    //         "language",
-    //         currentLanguage
-    //     );
-
-    //     translatePage();
-    // });
-    selector.addEventListener("change", (e) => {
-
-    currentLanguage = e.target.value;
-
-    localStorage.setItem(
-        "language",
-        currentLanguage
-    );
-
-    loadMapLayer(currentLanguage);
-
-    translatePage();
-    map.eachLayer((layer) => {
-    if (layer instanceof L.Marker) {
-        map.removeLayer(layer);
-    }
-});
-
-markers = [];
-
-sampleVillages.forEach(village => {
-    addVillageMarker(village);
-});
-});
-
-    initializeMap();
-    setupEventListeners();
-    loadCulturalItems();
-    translatePage();
-});
 
 
 function initializeMap() {
-    map = L.map('map').setView([23.0225, 72.5714], 5);
-
-    loadMapLayer(currentLanguage);
-
-    sampleVillages.forEach(village => {
-        addVillageMarker(village);
+    map = new maplibregl.Map({
+        container: 'map',
+        style: getMapStyle(currentLanguage),
+        center: [78.9629, 22.5937], // centre of India [lng, lat]
+        zoom: 5
     });
+    window.map = map;
+
+    map.addControl(new maplibregl.NavigationControl());
+
+    // Only add markers AFTER the map style has fully loaded
+    map.on('load', () => {
+        console.log("MAP LOADED");
+        setMapLanguage(currentLanguage);
+        addVillageMarkers();
+    });
+}
+// function getMapStyle(language) {
+  
+   
+    function getMapStyle() {
+    return "/api/map-style";
 }
 
 
-function loadMapLayer(language) {
+function setMapLanguage(lang) {
 
-    if (currentTileLayer) {
-        map.removeLayer(currentTileLayer);
+    const style = map.getStyle();
+
+    if (!style || !style.layers) {
+        console.warn("Style not loaded yet");
+        return;
     }
 
-    // English
-    if (language === "en") {
+    style.layers.forEach(layer => {
 
-        currentTileLayer = L.tileLayer(
-            'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-            {
-                attribution:
-                    '&copy; OpenStreetMap contributors &copy; CARTO',
-                subdomains: 'abcd',
-                maxZoom: 20
+        if (
+            layer.type === "symbol" &&
+            layer.layout &&
+            layer.layout["text-field"]
+        ) {
+
+            if (lang === "hi") {
+
+                map.setLayoutProperty(
+                    layer.id,
+                    "text-field",
+                    [
+                        "coalesce",
+                        ["get", "name:hi"],
+                        ["get", "name"]
+                    ]
+                );
+
+            } else if (lang === "mr") {
+
+                map.setLayoutProperty(
+                    layer.id,
+                    "text-field",
+                    [
+                        "coalesce",
+                        ["get", "name:mr"],
+                        ["get", "name:hi"],
+                        ["get", "name"]
+                    ]
+                );
+
+            } else {
+
+                map.setLayoutProperty(
+                    layer.id,
+                    "text-field",
+                    ["get", "name"]
+                );
+
             }
-        );
-
-    }
-    // Hindi / Marathi
-    else {
-
-        currentTileLayer = L.tileLayer(
-            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            {
-                attribution: '© OpenStreetMap contributors',
-                maxZoom: 18
-            }
-        );
-
-    }
-
-    currentTileLayer.addTo(map);
+        }
+    });
 }
 
 
 function addVillageMarker(village) {
+    const el = document.createElement('div');
 
-    const marker = L.marker(village.coordinates).addTo(map);
+    el.className = 'marker';
 
-    marker.bindPopup(`
-        <div style="color:#1a1a2e;">
-            <h3 style="color:#f4a261;">
-                ${village.name[currentLanguage]}
-            </h3>
+    // IMPORTANT: make it clickable
+    el.style.width = "20px";
+    el.style.height = "20px";
+    el.style.borderRadius = "50%";
+    el.style.background = "#f4a261";
+    el.style.border = "2px solid white";
+    el.style.cursor = "pointer";
+    el.style.pointerEvents = "auto";
 
-            <p>
-                ${village.description[currentLanguage]}
-            </p>
+    const marker = new maplibregl.Marker(el)
+        .setLngLat([village.coordinates[1], village.coordinates[0]])
+        .addTo(map);
 
-            <strong>
-                ${getTranslation().festivals}:
-            </strong>
-
-            ${village.festivals[currentLanguage].join(", ")}
-        </div>
-    `);
-
-    marker.on('click', () => {
+    // safer: attach via marker element
+    marker.getElement().addEventListener('click', (e) => {
+        e.stopPropagation(); // important
         showVillageInfo(village);
         playAmbientSound(village.ambientSound);
     });
 
-    markers.push({ marker, village });
+    markers.push(marker);
+}
+
+function addVillageMarkers() {
+    // Remove existing markers
+    markers.forEach(m => m.remove());
+    markers = [];
+
+    sampleVillages.forEach(village => addVillageMarker(village));
 }
 
 function showVillageInfo(village) {
@@ -376,53 +394,70 @@ function playAmbientSound(type) {
 }
 
 function setupEventListeners() {
-    document.getElementById('close-info').addEventListener('click', () => {
+
+    const closeBtn = document.getElementById('close-info');
+    const heatmapBtn = document.getElementById('toggle-heatmap');
+    const soundBtn = document.getElementById('toggle-sound');
+
+    if (!closeBtn || !heatmapBtn || !soundBtn) {
+        console.error("❌ Missing DOM elements:", {
+            closeBtn,
+            heatmapBtn,
+            soundBtn
+        });
+        return;
+    }
+
+    closeBtn.addEventListener('click', () => {
         document.getElementById('village-info').classList.remove('active');
         if (currentSound) {
             currentSound.pause();
             currentSound = null;
         }
     });
-    
-    document.getElementById('toggle-heatmap').addEventListener('click', toggleHeatmap);
-    document.getElementById('toggle-sound').addEventListener('click', toggleSound);
+
+    heatmapBtn.addEventListener('click', toggleHeatmap);
+    soundBtn.addEventListener('click', toggleSound);
 }
 
+
+
 function toggleHeatmap() {
-    // Simple heatmap visualization using marker intensity
-    // In production, use a proper heatmap library
+    const t = getTranslation();
+
     if (heatmapLayer) {
-        map.removeLayer(heatmapLayer);
+        // Remove heatmap overlay divs
+        heatmapMarkers.forEach(m => m.remove());
+        heatmapMarkers = [];
         heatmapLayer = null;
-        document.getElementById('toggle-heatmap')
-.textContent =
-getTranslation().toggleHeatmap;
+        document.getElementById('toggle-heatmap').textContent = t.toggleHeatmap;
     } else {
-        // Create a simple visual heatmap effect
-        markers.forEach(({ marker, village }) => {
-            const intensity = Math.random() * 0.5 + 0.5; // Simulated activity
-            const circle = L.circle(village.coordinates, {
-                radius: 50000 * intensity,
-                fillColor: '#f4a261',
-                fillOpacity: 0.3 * intensity,
-                color: '#f4a261',
-                weight: 1
-            }).addTo(map);
-            
-            if (!heatmapLayer) {
-                heatmapLayer = L.layerGroup();
-            }
-            heatmapLayer.addLayer(circle);
+        heatmapLayer = true; // flag
+
+        sampleVillages.forEach(village => {
+            const intensity = Math.random() * 0.5 + 0.5;
+            const size = Math.round(60 * intensity);
+
+            const el = document.createElement('div');
+            el.style.cssText = `
+                width:${size}px; height:${size}px;
+                border-radius:50%;
+                background:rgba(244,162,97,${0.35 * intensity});
+                border:1px solid rgba(244,162,97,0.6);
+                pointer-events:none;
+            `;
+
+            const hm = new maplibregl.Marker({ element: el, anchor: 'center' })
+                .setLngLat([village.coordinates[1], village.coordinates[0]])
+                .addTo(map);
+
+            heatmapMarkers.push(hm);
         });
-        
-        if (heatmapLayer) {
-            map.addLayer(heatmapLayer);
-        }
-      document.getElementById('toggle-heatmap')
-.textContent =
-getTranslation().hideHeatmap;
+
+        document.getElementById('toggle-heatmap').textContent = t.hideHeatmap;
     }
 }
+
 
 function toggleSound() {
     ambientSoundEnabled = !ambientSoundEnabled;
@@ -440,46 +475,58 @@ ambientSoundEnabled
     }
 }
 
+
+
 async function loadCulturalItems() {
     try {
         const response = await fetch('/api/items');
+
+        if (!response.ok) {
+            throw new Error("Failed to load cultural items");
+        }
+
         const items = await response.json();
-        
-        // Add markers for cultural items with coordinates
+
         items.forEach(item => {
             if (item.coordinates && item.coordinates.length === 2) {
-                const marker = L.marker(item.coordinates).addTo(map);
-                marker.bindPopup(`
-                    <div style="color: #1a1a2e;">
-                        <h4 style="color: #f4a261;">${item.title}</h4>
-                        <p>${item.description}</p>
-                        <small>Type: ${item.type}</small>
-                    </div>
-                `);
+
+                const el = document.createElement('div');
+                el.className = 'cultural-marker';
+
+                const marker = new maplibregl.Marker(el)
+                    .setLngLat([item.coordinates[1], item.coordinates[0]])
+                    .addTo(map);
+
+                el.addEventListener("click", () => {
+                    showPopup(item); // better than alert
+                });
             }
         });
+
     } catch (error) {
-        console.error('Error loading cultural items:', error);
+        console.error("Error loading cultural items:", error);
     }
 }
 
-
-
+// const backToTopBtn = document.getElementById("backToTopBtn");
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-// Show button after scrolling
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.add("show");
-    } else {
-        backToTopBtn.classList.remove("show");
-    }
-});
+if (backToTopBtn) {
 
-// Smooth scroll to top
-backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add("show");
+        } else {
+            backToTopBtn.classList.remove("show");
+        }
     });
-});
+
+    backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+}
+

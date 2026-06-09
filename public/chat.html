@@ -9,21 +9,53 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1>Parampara</h1>
-                <p class="tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="map.html">Explore Map</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="paths.html">Heritage Paths</a></li>
-                <li><a href="quest.html">Discovery Quest</a></li>
-                <li><a href="trails.html">Heritage Trails</a></li>
-                <li><a href="chat.html" class="active">Talk to Elder</a></li>
-            </ul>
+         <div class="nav-container">
+        <div class="logo">
+          <h1>Parampara</h1>
+          <p class="tagline">Preserving Living Traditions</p>
         </div>
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Toggle navigation"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li>
+            <a href="index.html" 
+              ><i class="ti ti-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
+          </li>
+          <li>
+            <a href="gallery.html"><i class="ti ti-photo"></i> Gallery</a>
+          </li>
+          <li>
+            <a href="paths.html"><i class="ti ti-route"></i> Heritage Paths</a>
+          </li>
+          <li>
+            <a href="quest.html"
+              ><i class="ti ti-compass"></i> Discovery Quest</a
+            >
+          </li>
+          <li>
+            <a href="trails.html"
+              ><i class="ti ti-trail-sign"></i> Heritage Trails</a
+            >
+          </li>
+          <li>
+            <a href="chat.html" class="active"
+              ><i class="ti ti-message-circle" ></i> Talk to Elder</a
+            >
+          </li>
+        </ul>
+      </div>
+   
     </nav>
 
     <main class="chat-container">
@@ -43,7 +75,7 @@
             </div>
             
             <div class="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask about traditions, crafts, festivals..." class="chat-input">
+                <input type="text" id="chat-input" style="font-weight: 900;color: rgb(51, 34, 3);" placeholder="Ask about traditions, crafts, festivals..." class="chat-input">
                 <button id="send-btn" class="btn btn-primary">Send</button>
             </div>
         </div>
@@ -60,15 +92,21 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
-    </footer>
+    <div class="container">
+        <p id="copyright"></p>
+    </div>
+</footer>
+
+<script>
+document.getElementById("copyright").innerHTML =
+    `© ${new Date().getFullYear()} Parampara. Preserving rural heritage, one story at a time.`;
+</script>
 <!-- Back To Top Button -->
 <button id="backToTopBtn" aria-label="Back to top">
     ↑
 </button>
     <script src="scripts/chat.js"></script>
+    <script src="scripts/main.js" ></script>
 </body>
 </html>
 

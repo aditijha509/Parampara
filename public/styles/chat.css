@@ -116,10 +116,10 @@
 .chat-input {
     flex: 1;
     padding: 0.75rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--clay-orange);
     border-radius: var(--border-radius);
     background: rgba(255, 255, 255, 0.05);
-    color: var(--text-light);
+    color: var(--primary-color);
     font-size: 1rem;
     font-family: inherit;
 }

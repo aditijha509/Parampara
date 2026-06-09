@@ -14,7 +14,7 @@ async function loadVillagePosts() {
         if (!postsGrid) return;
         
         if (posts.length === 0) {
-            postsGrid.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No posts yet. Check back soon for updates from villages!</p>';
+            postsGrid.innerHTML = '<p style="text-align: center; color: white;">No posts yet. Check back soon for updates from villages!</p>';
             return;
         }
         

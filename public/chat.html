@@ -1,29 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Talk to Elder - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/chat.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/chat.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" class="active" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
         <button
           class="hamburger"
@@ -36,9 +28,7 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
             <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
@@ -61,83 +51,108 @@
           </li>
           <li>
             <a href="chat.html" class="active"
-              ><i class="ti ti-message-circle" ></i> Talk to Elder</a
+              ><i class="ti ti-message-circle"></i> Talk to Elder</a
             >
           </li>
         </ul>
       </div>
-   
     </nav>
 
     <main class="chat-container">
-        <div class="chat-header">
-            <h2 data-i18n="chat_title">Talk to an Elder</h2>
-            <p data-i18n="chat_subtitle">Ask our AI Curator about rural traditions, crafts, festivals, and stories from our archive</p>
+      <div class="chat-header">
+        <h2 data-i18n="chat_title">Talk to an Elder</h2>
+        <p data-i18n="chat_subtitle">
+          Ask our AI Curator about rural traditions, crafts, festivals, and
+          stories from our archive
+        </p>
+      </div>
+
+      <div class="chat-interface">
+        <div id="chat-messages" class="chat-messages">
+          <div class="message bot-message">
+            <div class="message-avatar">👴</div>
+            <div class="message-content">
+              <p data-i18n="chat_welcome">
+                Namaste! I'm a cultural curator who has learned from all the
+                stories in our archive. Ask me about rural traditions, why
+                people paint their doors blue, the meaning behind Kantha
+                embroidery, or any village festival. What would you like to
+                know?
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="chat-interface">
-            <div id="chat-messages" class="chat-messages">
-                <div class="message bot-message">
-                    <div class="message-avatar">👴</div>
-                    <div class="message-content">
-                        <p data-i18n="chat_welcome">Namaste! I'm a cultural curator who has learned from all the stories in our archive. Ask me about rural traditions, why people paint their doors blue, the meaning behind Kantha embroidery, or any village festival. What would you like to know?</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="chat-input-container">
-                <input type="text" id="chat-input"
-                    data-i18n-placeholder="chat_placeholder"
-                    placeholder="Ask about traditions, crafts, festivals..."
-                    class="chat-input">
-                <button id="send-btn" class="btn btn-primary" data-i18n="chat_send_btn">Send</button>
-            </div>
+        <div class="chat-input-container">
+          <input
+            type="text"
+            id="chat-input"
+            data-i18n-placeholder="chat_placeholder"
+            placeholder="Ask about traditions, crafts, festivals..."
+            class="chat-input"
+          />
+          <button
+            id="send-btn"
+            class="btn btn-primary"
+            data-i18n="chat_send_btn"
+          >
+            Send
+          </button>
         </div>
+      </div>
 
-        <div class="suggested-questions">
-            <h3 data-i18n="chat_suggested_title">Suggested Questions</h3>
-            <div class="question-chips">
-                <button class="question-chip"
-                    data-i18n="chat_q1_label"
-                    data-i18n-question="chat_q1_question"
-                    data-question="Tell me a story about why people in villages paint their doors blue">
-                    Why are doors painted blue?
-                </button>
-                <button class="question-chip"
-                    data-i18n="chat_q2_label"
-                    data-i18n-question="chat_q2_question"
-                    data-question="What is Kantha embroidery?">
-                    What is Kantha?
-                </button>
-                <button class="question-chip"
-                    data-i18n="chat_q3_label"
-                    data-i18n-question="chat_q3_question"
-                    data-question="Tell me about rural festivals">
-                    Rural Festivals
-                </button>
-                <button class="question-chip"
-                    data-i18n="chat_q4_label"
-                    data-i18n-question="chat_q4_question"
-                    data-question="What are some traditional crafts?">
-                    Traditional Crafts
-                </button>
-            </div>
+      <div class="suggested-questions">
+        <h3 data-i18n="chat_suggested_title">Suggested Questions</h3>
+        <div class="question-chips">
+          <button
+            class="question-chip"
+            data-i18n="chat_q1_label"
+            data-i18n-question="chat_q1_question"
+            data-question="Tell me a story about why people in villages paint their doors blue"
+          >
+            Why are doors painted blue?
+          </button>
+          <button
+            class="question-chip"
+            data-i18n="chat_q2_label"
+            data-i18n-question="chat_q2_question"
+            data-question="What is Kantha embroidery?"
+          >
+            What is Kantha?
+          </button>
+          <button
+            class="question-chip"
+            data-i18n="chat_q3_label"
+            data-i18n-question="chat_q3_question"
+            data-question="Tell me about rural festivals"
+          >
+            Rural Festivals
+          </button>
+          <button
+            class="question-chip"
+            data-i18n="chat_q4_label"
+            data-i18n-question="chat_q4_question"
+            data-question="What are some traditional crafts?"
+          >
+            Traditional Crafts
+          </button>
         </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="scripts/chat.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
     <script src="scripts/navbar.js"></script>
-    <script src="scripts/main.js" ></script>
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

@@ -4,29 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parampara - Preserving Rural Heritage</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <meta name="description" content="A community-driven digital archive for preserving rural cultural heritage - stories, crafts, traditions, and responsible tourism">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <meta
+      name="description"
+      content="A community-driven digital archive for preserving rural cultural heritage - stories, crafts, traditions, and responsible tourism"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
-            <!-- Language selector injected here by language-switcher.js -->
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
         <button
           class="hamburger"
@@ -73,93 +70,123 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h2 class="hero-title" data-i18n="hero_title">Preserving the Stories That Matter</h2>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">A community-driven archive for rural cultural heritage, connecting traditions with the world</p>
-            <div class=hero-texts>
-            <h2 class="hero-title">Preserving the Stories That Matter</h2>
-            <p class="hero-subtitle">A community-driven archive for rural cultural heritage, connecting traditions with the world</p>
-            <div class="hero-buttons">
-                <a href="map.html" class="btn btn-primary" data-i18n="hero_btn_explore">Explore Cultures</a>
-                <a href="paths.html" class="btn btn-secondary" data-i18n="hero_btn_path">Follow a Path</a>
-            </div>
+      <div class="hero-content">
+        <h2 class="hero-title" data-i18n="hero_title">
+          Preserving the Stories That Matter
+        </h2>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          A community-driven archive for rural cultural heritage, connecting
+          traditions with the world
+        </p>
+        <div class="hero-buttons">
+          <a
+            href="map.html"
+            class="btn btn-primary"
+            data-i18n="hero_btn_explore"
+            >Explore Cultures</a
+          >
+          <a
+            href="paths.html"
+            class="btn btn-secondary"
+            data-i18n="hero_btn_path"
+            >Follow a Path</a
+          >
         </div>
-        <div class="hero-image">
-            <div class="floating-card">
-                <div class="card-icon">🎨</div>
-                <h3 data-i18n="floating_card_title">Visual Patterns</h3>
-                <p data-i18n="floating_card_desc">Discover traditional art forms</p>
-            </div>
-            <div class="hero-img">
-            </div>
+      </div>
+      <div class="hero-image">
+        <div class="floating-card">
+          <div class="card-icon">🎨</div>
+          <h3 data-i18n="floating_card_title">Visual Patterns</h3>
+          <p data-i18n="floating_card_desc">Discover traditional art forms</p>
         </div>
+        <div class="hero-img"></div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section class="features">
-        <div class="container">
-            <h2 class="section-title" data-i18n="section_how_title">How Parampara Works</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3 data-i18n="feature_map_title">Cultural Mapping</h3>
-                    <p data-i18n="feature_map_desc">Explore villages on an interactive map and discover unique traditions, festivals, and crafts</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎧</div>
-                    <h3 data-i18n="feature_audio_title">Audio Stories</h3>
-                    <p data-i18n="feature_audio_desc">Listen to oral histories from village elders, preserving voices that would otherwise be lost</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🖼️</div>
-                    <h3 data-i18n="feature_visual_title">Visual Archive</h3>
-                    <p data-i18n="feature_visual_desc">Browse galleries of traditional crafts with detailed explanations of symbols and meanings</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛤️</div>
-                    <h3 data-i18n="feature_paths_title">Heritage Paths</h3>
-                    <p data-i18n="feature_paths_desc">Follow curated journeys through different villages, connecting stories and traditions</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3 data-i18n="feature_quest_title">Discovery Quest</h3>
-                    <p data-i18n="feature_quest_desc">Engage in scavenger hunts to unlock digital badges and learn about hidden cultural treasures</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3 data-i18n="feature_connect_title">Connect Locally</h3>
-                    <p data-i18n="feature_connect_desc">Meet cultural hosts, plan responsible visits, and support rural artisans directly</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title" data-i18n="section_how_title">
+          How Parampara Works
+        </h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3 data-i18n="feature_map_title">Cultural Mapping</h3>
+            <p data-i18n="feature_map_desc">
+              Explore villages on an interactive map and discover unique
+              traditions, festivals, and crafts
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎧</div>
+            <h3 data-i18n="feature_audio_title">Audio Stories</h3>
+            <p data-i18n="feature_audio_desc">
+              Listen to oral histories from village elders, preserving voices
+              that would otherwise be lost
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🖼️</div>
+            <h3 data-i18n="feature_visual_title">Visual Archive</h3>
+            <p data-i18n="feature_visual_desc">
+              Browse galleries of traditional crafts with detailed explanations
+              of symbols and meanings
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛤️</div>
+            <h3 data-i18n="feature_paths_title">Heritage Paths</h3>
+            <p data-i18n="feature_paths_desc">
+              Follow curated journeys through different villages, connecting
+              stories and traditions
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎮</div>
+            <h3 data-i18n="feature_quest_title">Discovery Quest</h3>
+            <p data-i18n="feature_quest_desc">
+              Engage in scavenger hunts to unlock digital badges and learn about
+              hidden cultural treasures
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3 data-i18n="feature_connect_title">Connect Locally</h3>
+            <p data-i18n="feature_connect_desc">
+              Meet cultural hosts, plan responsible visits, and support rural
+              artisans directly
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Live Updates Section -->
     <section class="live-updates">
-        <div class="container">
-            <h2 class="section-title" data-i18n="section_live_title">Live from the Village</h2>
-            <div id="village-posts" class="posts-grid">
-                <!-- Posts will be loaded dynamically -->
-            </div>
+      <div class="container">
+        <h2 class="section-title" data-i18n="section_live_title">
+          Live from the Village
+        </h2>
+        <div id="village-posts" class="posts-grid">
+          <!-- Posts will be loaded dynamically -->
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="scripts/main.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
     <script src="scripts/navbar.js"></script>
-</body>
+  </body>
 </html>

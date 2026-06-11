@@ -1,29 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visual Archive - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/gallery.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/gallery.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" class="active" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
         <button
           class="hamburger"
@@ -36,15 +28,15 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
             <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
           </li>
           <li>
-            <a href="gallery.html" class="active"><i class="ti ti-photo"></i> Gallery</a>
+            <a href="gallery.html" class="active"
+              ><i class="ti ti-photo"></i> Gallery</a
+            >
           </li>
           <li>
             <a href="paths.html"><i class="ti ti-route"></i> Heritage Paths</a>
@@ -66,95 +58,128 @@
           </li>
         </ul>
       </div>
-
     </nav>
 
     <main class="gallery-container">
-        <div class="gallery-header">
-            <h2 data-i18n="gallery_title">Visual Patterns Archive</h2>
-            <p data-i18n="gallery_subtitle">Explore traditional art forms, embroidery patterns, and crafts from rural India</p>
-            <button id="add-item-btn" class="btn btn-primary" data-i18n="gallery_add_btn">Add New Item</button>
-        </div>
+      <div class="gallery-header">
+        <h2 data-i18n="gallery_title">Visual Patterns Archive</h2>
+        <p data-i18n="gallery_subtitle">
+          Explore traditional art forms, embroidery patterns, and crafts from
+          rural India
+        </p>
+        <button
+          id="add-item-btn"
+          class="btn btn-primary"
+          data-i18n="gallery_add_btn"
+        >
+          Add New Item
+        </button>
+      </div>
 
-        <div class="filter-bar">
-            <input type="text" id="search-input"
-                data-i18n-placeholder="gallery_search_placeholder"
-                placeholder="Search patterns, villages, or crafts..."
-                class="search-input">
-            <select id="type-filter" class="filter-select">
-                <option value="all"    data-i18n="gallery_filter_all">All Types</option>
-                <option value="visual" data-i18n="gallery_filter_visual">Visual Patterns</option>
-                <option value="audio"  data-i18n="gallery_filter_audio">Audio Stories</option>
-                <option value="story"  data-i18n="gallery_filter_story">Stories</option>
-            </select>
-        </div>
+      <div class="filter-bar">
+        <input
+          type="text"
+          id="search-input"
+          data-i18n-placeholder="gallery_search_placeholder"
+          placeholder="Search patterns, villages, or crafts..."
+          class="search-input"
+        />
+        <select id="type-filter" class="filter-select">
+          <option value="all" data-i18n="gallery_filter_all">All Types</option>
+          <option value="visual" data-i18n="gallery_filter_visual">
+            Visual Patterns
+          </option>
+          <option value="audio" data-i18n="gallery_filter_audio">
+            Audio Stories
+          </option>
+          <option value="story" data-i18n="gallery_filter_story">
+            Stories
+          </option>
+        </select>
+      </div>
 
-        <div id="gallery-grid" class="gallery-grid">
-            <!-- Items will be loaded dynamically -->
-        </div>
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Items will be loaded dynamically -->
+      </div>
     </main>
 
     <!-- Add Item Modal -->
     <div id="add-item-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 data-i18n="modal_add_title">Add New Cultural Item</h3>
-                <button class="close-btn" id="close-modal" data-i18n="btn_close">×</button>
-            </div>
-            <form id="add-item-form" class="modal-form">
-                <div class="form-group">
-                    <label data-i18n="modal_label_title">Title</label>
-                    <input type="text" name="title" required>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_type">Type</label>
-                    <select name="type" required>
-                        <option value="visual" data-i18n="modal_type_visual">Visual Pattern</option>
-                        <option value="audio"  data-i18n="modal_type_audio">Audio Story</option>
-                        <option value="story"  data-i18n="modal_type_story">Story</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_location">Location/Village</label>
-                    <input type="text" name="location" required>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_desc">Description</label>
-                    <textarea name="description" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_image_url">Image URL</label>
-                    <input type="url" name="imageUrl">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_audio_url">Audio URL (if applicable)</label>
-                    <input type="url" name="audioUrl">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="modal_label_tags">Tags (comma-separated)</label>
-                    <input type="text" name="tags"
-                        data-i18n-placeholder="modal_tags_placeholder"
-                        placeholder="e.g., embroidery, festival, story">
-                </div>
-                <button type="submit" class="btn btn-primary" data-i18n="btn_add_item">Add Item</button>
-            </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-i18n="modal_add_title">Add New Cultural Item</h3>
+          <button class="close-btn" id="close-modal" data-i18n="btn_close">
+            ×
+          </button>
         </div>
+        <form id="add-item-form" class="modal-form">
+          <div class="form-group">
+            <label data-i18n="modal_label_title">Title</label>
+            <input type="text" name="title"  required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_type">Type</label>
+            <select name="type" required>
+              <option value="visual" data-i18n="modal_type_visual">
+                Visual Pattern
+              </option>
+              <option value="audio" data-i18n="modal_type_audio">
+                Audio Story
+              </option>
+              <option value="story" data-i18n="modal_type_story">Story</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_location">Location/Village</label>
+            <input type="text" name="location" required />
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_desc">Description</label>
+            <textarea name="description" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_image_url">Image URL</label>
+            <input type="url" name="imageUrl" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_audio_url"
+              >Audio URL (if applicable)</label
+            >
+            <input type="url" name="audioUrl" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="modal_label_tags">Tags (comma-separated)</label>
+            <input
+              type="text"
+              name="tags"
+              data-i18n-placeholder="modal_tags_placeholder"
+              placeholder="e.g., embroidery, festival, story"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-i18n="btn_add_item"
+          >
+            Add Item
+          </button>
+        </form>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="scripts/gallery.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
     <script src="scripts/navbar.js"></script>
-        <script src="scripts/main.js" ></script>
-
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

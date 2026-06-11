@@ -1,30 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heritage Trails - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/trails.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/trails.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" class="active" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
+
         <button
           class="hamburger"
           id="hamburgerBtn"
@@ -36,9 +29,7 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
             <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
@@ -66,46 +57,56 @@
           </li>
         </ul>
       </div>
-
     </nav>
 
     <main class="trails-container">
-        <div class="trails-header">
-            <h2 data-i18n="trails_title">Heritage Trails &amp; Local Hosts</h2>
-            <p data-i18n="trails_subtitle">Plan responsible visits to villages, meet cultural hosts, and support local artisans</p>
-        </div>
+      <div class="trails-header">
+        <h2 data-i18n="trails_title">Heritage Trails &amp; Local Hosts</h2>
+        <p data-i18n="trails_subtitle">
+          Plan responsible visits to villages, meet cultural hosts, and support
+          local artisans
+        </p>
+      </div>
 
-        <div id="trails-list" class="trails-list">
-            <!-- Trails will be loaded dynamically -->
-        </div>
+      <div id="trails-list" class="trails-list">
+        <!-- Trails will be loaded dynamically -->
+      </div>
     </main>
 
     <!-- Trail Detail Modal -->
     <div id="trail-detail-modal" class="modal">
-        <div class="modal-content trail-detail">
-            <div class="modal-header">
-                <h3 id="trail-detail-title" data-i18n="trails_detail_title">Trail Details</h3>
-                <button class="close-btn" id="close-trail-modal" data-i18n="btn_close">×</button>
-            </div>
-            <div id="trail-detail-content" class="trail-detail-content">
-                <!-- Trail details will be loaded here -->
-            </div>
+      <div class="modal-content trail-detail">
+        <div class="modal-header">
+          <h3 id="trail-detail-title" data-i18n="trails_detail_title">
+            Trail Details
+          </h3>
+          <button
+            class="close-btn"
+            id="close-trail-modal"
+            data-i18n="btn_close"
+          >
+            ×
+          </button>
         </div>
+        <div id="trail-detail-content" class="trail-detail-content">
+          <!-- Trail details will be loaded here -->
+        </div>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="scripts/trails.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
     <script src="scripts/navbar.js"></script>
-      <script src="scripts/main.js" ></script>
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

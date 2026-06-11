@@ -1,40 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cultural Map - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/map.css" />
 
     <link
       href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="styles/languageSelector.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
-
-</head>
-<body>
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" class="active" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
-            <!-- Global language selector injected here by languageSwitcher.js -->
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
+
         <button
           class="hamburger"
           id="hamburgerBtn"
@@ -46,12 +43,12 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
-            <a href="map.html" class="active"><i class="ti ti-map-2"></i> Explore Map</a>
+            <a href="map.html" class="active"
+              ><i class="ti ti-map-2"></i> Explore Map</a
+            >
           </li>
           <li>
             <a href="gallery.html"><i class="ti ti-photo"></i> Gallery</a>
@@ -79,58 +76,77 @@
     </nav>
 
     <main class="map-container">
-        <div class="map-header">
-            <h2 data-i18n="map_title">Digital Time-Travel: Explore Rural Heritage</h2>
-            <p data-i18n="map_subtitle">Click on villages to discover their unique traditions, festivals, and crafts</p>
-            <div class="map-controls">
-                <!-- language-switcher.js keeps this in sync with the global selector -->
-                <select id="language-selector" class="btn btn-secondary">
-                    <option value="en">English</option>
-                    <option value="hi">हिन्दी</option>
-                    <option value="mr">मराठी</option>
-                </select>
-                <button id="toggle-heatmap" class="btn btn-secondary" data-i18n="map_toggle_heatmap">Toggle Heatmap</button>
-                <button id="toggle-sound"   class="btn btn-secondary" data-i18n="map_ambient_on">Ambient Sounds: ON</button>
-            </div>
+      <div class="map-header">
+        <h2 data-i18n="map_title">
+          Digital Time-Travel: Explore Rural Heritage
+        </h2>
+        <p data-i18n="map_subtitle">
+          Click on villages to discover their unique traditions, festivals, and
+          crafts
+        </p>
+        <div class="map-controls">
+          <!-- language-switcher.js keeps this in sync with the global selector -->
+          <select id="language-selector" class="btn btn-secondary">
+            <option value="en">English</option>
+            <option value="hi">हिन्दी</option>
+            <option value="mr">मराठी</option>
+          </select>
+          <button
+            id="toggle-heatmap"
+            class="btn btn-secondary"
+            data-i18n="map_toggle_heatmap"
+          >
+            Toggle Heatmap
+          </button>
+          <button
+            id="toggle-sound"
+            class="btn btn-secondary"
+            data-i18n="map_ambient_on"
+          >
+            Ambient Sounds: ON
+          </button>
         </div>
+      </div>
 
-        <div id="map" class="map-view"></div>
+      <div id="map" class="map-view"></div>
 
-        <div id="village-info" class="village-info-panel">
-            <div class="info-header">
-                <h3 id="village-name" data-i18n="map_select_village">Select a Village</h3>
-                <button id="close-info" class="close-btn" data-i18n="btn_close">×</button>
-            </div>
-            <div id="info-content" class="info-content">
-                <p data-i18n="map_click_marker">Click on a village marker to see details</p>
-            </div>
+      <div id="village-info" class="village-info-panel">
+        <div class="info-header">
+          <h3 id="village-name" data-i18n="map_select_village">
+            Select a Village
+          </h3>
+          <button id="close-info" class="close-btn" data-i18n="btn_close">
+            ×
+          </button>
         </div>
+        <div id="info-content" class="info-content">
+          <p data-i18n="map_click_marker">
+            Click on a village marker to see details
+          </p>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
 
-
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/map.js"></script>
     <script src="scripts/main.js"></script>
-</body>
-</html>
 
     <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/map.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
 
-
     <button id="backToTopBtn" class="back-to-top">↑</button>
-</body>
+  </body>
 </html>

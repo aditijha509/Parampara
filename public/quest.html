@@ -1,29 +1,21 @@
- <!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discovery Quest - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/quest.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/quest.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" class="active" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
         <button
           class="hamburger"
@@ -36,9 +28,7 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
             <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
@@ -66,65 +56,72 @@
           </li>
         </ul>
       </div>
-
     </nav>
 
     <main class="quest-container">
-        <div class="quest-header">
-            <h2 data-i18n="quest_title">The Discovery Quest</h2>
-            <p data-i18n="quest_subtitle">Complete scavenger hunts to unlock digital badges and learn about hidden cultural treasures</p>
+      <div class="quest-header">
+        <h2 data-i18n="quest_title">The Discovery Quest</h2>
+        <p data-i18n="quest_subtitle">
+          Complete scavenger hunts to unlock digital badges and learn about
+          hidden cultural treasures
+        </p>
+      </div>
+
+      <div class="quest-dashboard">
+        <div class="user-profile">
+          <h3 data-i18n="quest_your_progress">Your Progress</h3>
+          <div class="progress-stats">
+            <div class="stat">
+              <span class="stat-value" id="badge-count">0</span>
+              <span class="stat-label" data-i18n="quest_badges_earned"
+                >Badges Earned</span
+              >
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="quest-completed">0</span>
+              <span class="stat-label" data-i18n="quest_completed"
+                >Quests Completed</span
+              >
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="check-ins">0</span>
+              <span class="stat-label" data-i18n="quest_villages"
+                >Villages Visited</span
+              >
+            </div>
+          </div>
         </div>
 
-        <div class="quest-dashboard">
-            <div class="user-profile">
-                <h3 data-i18n="quest_your_progress">Your Progress</h3>
-                <div class="progress-stats">
-                    <div class="stat">
-                        <span class="stat-value" id="badge-count">0</span>
-                        <span class="stat-label" data-i18n="quest_badges_earned">Badges Earned</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value" id="quest-completed">0</span>
-                        <span class="stat-label" data-i18n="quest_completed">Quests Completed</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-value" id="check-ins">0</span>
-                        <span class="stat-label" data-i18n="quest_villages">Villages Visited</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="badges-section">
-                <h3 data-i18n="quest_your_badges">Your Badges</h3>
-                <div id="badges-grid" class="badges-grid">
-                    <!-- Badges will be loaded here -->
-                </div>
-            </div>
+        <div class="badges-section">
+          <h3 data-i18n="quest_your_badges">Your Badges</h3>
+          <div id="badges-grid" class="badges-grid">
+            <!-- Badges will be loaded here -->
+          </div>
         </div>
+      </div>
 
-        <div class="quests-section">
-            <h3 data-i18n="quest_available">Available Quests</h3>
-            <div id="quests-list" class="quests-list">
-                <!-- Quests will be loaded here -->
-            </div>
+      <div class="quests-section">
+        <h3 data-i18n="quest_available">Available Quests</h3>
+        <div id="quests-list" class="quests-list">
+          <!-- Quests will be loaded here -->
         </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
-<!-- Back To Top Button -->
-<button id="backToTopBtn" aria-label="Back to top">
-    ↑
-</button>
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top">↑</button>
     <script src="scripts/quest.js"></script>
     <script src="scripts/translations.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
     <script src="scripts/navbar.js"></script>
 
-      <script src="scripts/main.js" ></script>
-
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

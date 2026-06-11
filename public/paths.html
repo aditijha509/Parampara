@@ -1,29 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heritage Paths - Parampara</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/paths.css">
-    <link rel="stylesheet" href="styles/languageSelector.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/paths.css" />
+    <link rel="stylesheet" href="styles/languageSelector.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1 data-i18n="brand_name">Parampara</h1>
-                <p class="tagline" data-i18n="brand_tagline">Preserving Living Traditions</p>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="map.html" data-i18n="nav_map">Explore Map</a></li>
-                <li><a href="gallery.html" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="paths.html" class="active" data-i18n="nav_paths">Heritage Paths</a></li>
-                <li><a href="quest.html" data-i18n="nav_quest">Discovery Quest</a></li>
-                <li><a href="trails.html" data-i18n="nav_trails">Heritage Trails</a></li>
-                <li><a href="chat.html" data-i18n="nav_chat">Talk to Elder</a></li>
-            </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <h1 data-i18n="brand_name">Parampara</h1>
+          <p class="tagline" data-i18n="brand_tagline">
+            Preserving Living Traditions
+          </p>
         </div>
         <button
           class="hamburger"
@@ -36,9 +28,7 @@
         </button>
         <ul class="nav-menu" id="navMenu">
           <li>
-            <a href="index.html" 
-              ><i class="ti ti-home"></i> Home</a
-            >
+            <a href="index.html"><i class="ti ti-home"></i> Home</a>
           </li>
           <li>
             <a href="map.html"><i class="ti ti-map-2"></i> Explore Map</a>
@@ -47,7 +37,9 @@
             <a href="gallery.html"><i class="ti ti-photo"></i> Gallery</a>
           </li>
           <li>
-            <a href="paths.html" class="active"><i class="ti ti-route"></i> Heritage Paths</a>
+            <a href="paths.html" class="active"
+              ><i class="ti ti-route"></i> Heritage Paths</a
+            >
           </li>
           <li>
             <a href="quest.html"
@@ -69,79 +61,128 @@
     </nav>
 
     <main class="paths-container">
-        <div class="paths-header">
-            <h2 data-i18n="paths_title">Heritage Paths: Guided Storytelling</h2>
-            <p data-i18n="paths_subtitle">Follow curated journeys that connect stories, traditions, and villages in a narrative flow</p>
-            <button id="create-path-btn" class="btn btn-primary" data-i18n="paths_create_btn">Create New Path</button>
-        </div>
+      <div class="paths-header">
+        <h2 data-i18n="paths_title">Heritage Paths: Guided Storytelling</h2>
+        <p data-i18n="paths_subtitle">
+          Follow curated journeys that connect stories, traditions, and villages
+          in a narrative flow
+        </p>
+        <button
+          id="create-path-btn"
+          class="btn btn-primary"
+          data-i18n="paths_create_btn"
+        >
+          Create New Path
+        </button>
+      </div>
 
-        <div id="paths-list" class="paths-list">
-            <!-- Paths will be loaded dynamically -->
-        </div>
+      <div id="paths-list" class="paths-list">
+        <!-- Paths will be loaded dynamically -->
+      </div>
     </main>
 
     <!-- Path Player Modal -->
     <div id="path-player-modal" class="modal">
-        <div class="modal-content path-player">
-            <div class="modal-header">
-                <h3 id="path-player-title" data-i18n="path_player_title">Heritage Path</h3>
-                <button class="close-btn" id="close-player" data-i18n="btn_close">×</button>
-            </div>
-            <div class="path-progress">
-                <div class="progress-bar">
-                    <div id="path-progress-fill" class="progress-fill"></div>
-                </div>
-                <p id="path-progress-text">Step 0 of 0</p>
-            </div>
-            <div id="path-content" class="path-content">
-                <!-- Path content will be loaded here -->
-            </div>
-            <div class="path-controls">
-                <button id="prev-step" class="btn btn-secondary" data-i18n="path_btn_prev">Previous</button>
-                <button id="next-step" class="btn btn-primary"   data-i18n="path_btn_next">Next</button>
-            </div>
+      <div class="modal-content path-player">
+        <div class="modal-header">
+          <h3 id="path-player-title" data-i18n="path_player_title">
+            Heritage Path
+          </h3>
+          <button class="close-btn" id="close-player" data-i18n="btn_close">
+            ×
+          </button>
         </div>
+        <div class="path-progress">
+          <div class="progress-bar">
+            <div id="path-progress-fill" class="progress-fill"></div>
+          </div>
+          <p id="path-progress-text">Step 0 of 0</p>
+        </div>
+        <div id="path-content" class="path-content">
+          <!-- Path content will be loaded here -->
+        </div>
+        <div class="path-controls">
+          <button
+            id="prev-step"
+            class="btn btn-secondary"
+            data-i18n="path_btn_prev"
+          >
+            Previous
+          </button>
+          <button
+            id="next-step"
+            class="btn btn-primary"
+            data-i18n="path_btn_next"
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </div>
 
     <!-- Create Path Modal -->
     <div id="create-path-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 data-i18n="modal_create_path_title">Create Heritage Path</h3>
-                <button class="close-btn" id="close-create-modal" data-i18n="btn_close">×</button>
-            </div>
-            <form id="create-path-form" class="modal-form">
-                <div class="form-group">
-                    <label data-i18n="path_form_title_label">Path Title</label>
-                    <input type="text" name="title" required
-                        data-i18n-placeholder="path_form_title_placeholder"
-                        placeholder="e.g., The Journey of Kantha Stitch">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="path_form_theme_label">Theme</label>
-                    <input type="text" name="theme" required
-                        data-i18n-placeholder="path_form_theme_placeholder"
-                        placeholder="e.g., Embroidery Traditions">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="path_form_desc_label">Description</label>
-                    <textarea name="description" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="path_form_items_label">Select Items (from gallery)</label>
-                    <div id="available-items" class="items-selector">
-                        <!-- Items will be loaded here -->
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" data-i18n="btn_create_path">Create Path</button>
-            </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 data-i18n="modal_create_path_title">Create Heritage Path</h3>
+          <button
+            class="close-btn"
+            id="close-create-modal"
+            data-i18n="btn_close"
+          >
+            ×
+          </button>
         </div>
+        <form id="create-path-form" class="modal-form">
+          <div class="form-group">
+            <label data-i18n="path_form_title_label">Path Title</label>
+            <input
+              type="text"
+              name="title"
+              required
+              data-i18n-placeholder="path_form_title_placeholder"
+              placeholder="e.g., The Journey of Kantha Stitch"
+            />
+          </div>
+          <div class="form-group">
+            <label data-i18n="path_form_theme_label">Theme</label>
+            <input
+              type="text"
+              name="theme"
+              required
+              data-i18n-placeholder="path_form_theme_placeholder"
+              placeholder="e.g., Embroidery Traditions"
+            />
+          </div>
+          <div class="form-group">
+            <label data-i18n="path_form_desc_label">Description</label>
+            <textarea name="description" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label data-i18n="path_form_items_label"
+              >Select Items (from gallery)</label
+            >
+            <div id="available-items" class="items-selector">
+              <!-- Items will be loaded here -->
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-i18n="btn_create_path"
+          >
+            Create Path
+          </button>
+        </form>
+      </div>
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer_copy">© 2024 Parampara. Preserving rural heritage, one story at a time.</p>
-        </div>
+      <div class="container">
+        <p data-i18n="footer_copy">
+          © 2024 Parampara. Preserving rural heritage, one story at a time.
+        </p>
+      </div>
     </footer>
 
     <!--
@@ -151,5 +192,5 @@
     <script src="scripts/translations.js"></script>
     <script src="scripts/paths.js"></script>
     <script src="scripts/languageSwitcher.js"></script>
-</body>
+  </body>
 </html>

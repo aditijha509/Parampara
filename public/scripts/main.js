@@ -65,3 +65,27 @@ backToTopBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navMenu = document.getElementById('navMenu');
+
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open');
+    navMenu.classList.toggle('open');
+});
+
+// Close menu when any link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('open');
+    });
+});
+
+// Close menu on outside click
+document.addEventListener('click', (e) => {
+    if (!hamburgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburgerBtn.classList.remove('open');
+        navMenu.classList.remove('open');
+    }
+});

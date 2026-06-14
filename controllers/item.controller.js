@@ -1,7 +1,12 @@
 const store = require("../data/store");
 
 const getItems = (req, res) => {
-  res.json(store.culturalItems);
+  try {
+    res.json(store.culturalItems || []);
+  } catch (error) {
+    console.error("Failed to fetch items:", error);
+    res.status(500).json({ error: "Error fetching items" });
+  }
 };
 
 const createItem = (req, res) => {
@@ -35,6 +40,7 @@ const createItem = (req, res) => {
 
     res.status(201).json(newItem);
   } catch (error) {
+    console.error("Failed to create item:", error);
     res.status(500).json({
       error: "Error adding item",
     });

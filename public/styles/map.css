@@ -1,258 +1,241 @@
 /* Map Page Styles */
 
 .map-container {
-    padding: 2rem;
-    min-height: calc(100vh - 200px);
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
 }
 
 .map-header {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .map-header h2 {
-    color: var(--warm-beige);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(45, 24, 16, 0.7), 1px 1px 3px rgba(0, 0, 0, 0.3);
-    font-weight: bold;
-    letter-spacing: 1px;
+  color: var(--warm-beige);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow:
+    3px 3px 6px rgba(45, 24, 16, 0.7),
+    1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .map-header p {
-    color: var(--wheat-yellow);
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(45, 24, 16, 0.6);
-    font-weight: 600;
+  color: var(--wheat-yellow);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(45, 24, 16, 0.6);
+  font-weight: 600;
 }
 
 .map-controls {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .map-view {
-    height: 600px;
-    width: 100%;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
-    position: relative;
-    background: var(--card-bg);
-    border: 3px solid var(--accent-color);
+  height: 600px;
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  position: relative;
+  background: var(--card-bg);
+  border: 3px solid var(--accent-color);
 }
 
 .map-view.map-unavailable {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .map-unavailable-notice {
-    text-align: center;
-    max-width: 480px;
-    padding: 2rem;
-    color: var(--text-dark);
+  text-align: center;
+  max-width: 480px;
+  padding: 2rem;
+  color: var(--text-dark);
 }
 
 .map-unavailable-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .map-unavailable-message {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-strong);
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
 }
 
 .map-unavailable-hint {
-    font-size: 0.95rem;
-    color: var(--text-muted, var(--text-dark));
-    line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--text-muted, var(--text-dark));
+  line-height: 1.5;
 }
 
 .village-info-panel {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    max-width: 800px;
-    margin: 0 auto;
-    display: none;
-    border: 3px solid var(--accent-color);
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 0 auto;
+  display: none;
+  border: 3px solid var(--accent-color);
 }
 
 .village-info-panel.active {
-    display: block;
-    animation: fadeInUp 0.3s ease;
+  display: block;
+  animation: fadeInUp 0.3s ease;
 }
 
 .info-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .info-header h3 {
-    color: var(--text-strong);
-    font-size: 1.6rem;
-    font-weight: bold;
+  color: var(--text-strong);
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .info-content {
-    line-height: 1.8;
+  line-height: 1.8;
 }
 
 .info-content p {
-    margin-bottom: 1rem;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .village-details {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .detail-item {
-    background: rgba(212, 165, 116, 0.2);
-    padding: 1rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--terracotta);
+  background: rgba(212, 165, 116, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--terracotta);
 }
 
 .detail-item h4 {
-    color: var(--text-strong);
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    font-size: 1.2rem;
+  color: var(--text-strong);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .detail-item p {
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* Leaflet Map Customization */
 :global(.leaflet-container) {
-    background: var(--card-bg) !important;
+  background: var(--card-bg) !important;
 }
 
 :global(.leaflet-popup-content-wrapper) {
-    background: var(--card-bg) !important;
-    color: var(--text-light) !important;
+  background: var(--card-bg) !important;
+  color: var(--text-light) !important;
 }
 
 :global(.leaflet-popup-tip) {
-    background: var(--card-bg) !important;
+  background: var(--card-bg) !important;
 }
-
 
 /* Back To Top Button */
 #backToTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 45px;
-    height: 45px;
-
-    border: none;
-    border-radius: 10px;
-
-    background: linear-gradient(135deg,
-            var(--terracotta),
-            var(--accent-color));
-
-    color: var(--warm-beige);
-    font-size: 1.5rem;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.25),
-        0 0 12px rgba(205, 133, 63, 0.4);
-
-    /* opacity: 0; */
-    visibility: hidden;
-
-    transform: translateY(20px);
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease,
-        visibility 0.3s ease;
-
-    z-index: 9999;
-    background-color: black !important;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--mustard);
+  background: var(--earth-brown);
+  color: var(--wheat-yellow);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    background 0.3s ease;
+  box-shadow:
+    0 0 0 0 rgba(218, 165, 32, 0.6),
+    var(--shadow);
 }
 
 /* Show Button */
 #backToTopBtn.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* Hover Effect */
 #backToTopBtn:hover {
-    transform: translateY(-5px) scale(1.08);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.35),
-        0 0 18px rgba(205, 133, 63, 0.6);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.35)
 }
 
 /* Click Effect */
 #backToTopBtn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    #backToTopBtn {
-        width: 48px;
-        height: 48px;
+  #backToTopBtn {
+    width: 48px;
+    height: 48px;
 
-        bottom: 20px;
-        right: 20px;
+    bottom: 20px;
+    right: 20px;
 
-        font-size: 1.2rem;
-    }
+    font-size: 1.2rem;
+  }
 }
 
 #backToTopBtn1 {
-    background-color: #2C1810;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 55px;
-    height: 55px;
-    border: none;
-    color: #8B4513;
-    cursor: pointer;
+  background-color: #2c1810;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  color: #8b4513;
+  cursor: pointer;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.25),
-        0 0 12px rgba(205, 133, 63, 0.4);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(205, 133, 63, 0.4);
 }

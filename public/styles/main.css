@@ -55,7 +55,7 @@ body::before {
   z-index: 0;
 }
 
-body>* {
+body > * {
   position: relative;
   z-index: 1;
 }
@@ -154,9 +154,9 @@ body>* {
 }
 
 .nav-menu a.active {
-  background: #C67A1A;
-  color: #FFF4D6;
-  border: 1px solid #E2B65B;
+  background: #c67a1a;
+  color: #fff4d6;
+  border: 1px solid #e2b65b;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -222,7 +222,7 @@ body>* {
   padding: 3rem 3rem 3rem 4rem;
   position: relative;
   isolation: isolate;
-  background-image: url('../images/hero-text-image.png');
+  background-image: url("../images/hero-text-image.png");
   background-size: cover;
   background-position: center;
 }
@@ -231,10 +231,12 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,
-      rgba(30, 12, 4, 0.93) 0%,
-      rgba(90, 40, 8, 0.80) 50%,
-      rgba(15, 6, 2, 0.90) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 12, 4, 0.93) 0%,
+    rgba(90, 40, 8, 0.8) 50%,
+    rgba(15, 6, 2, 0.9) 100%
+  );
   z-index: 0;
 }
 
@@ -242,13 +244,15 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 30% 50%,
-      rgba(205, 133, 63, 0.08) 0%,
-      transparent 65%);
+  background: radial-gradient(
+    ellipse at 30% 50%,
+    rgba(205, 133, 63, 0.08) 0%,
+    transparent 65%
+  );
   z-index: 0;
 }
 
-.hero-texts>* {
+.hero-texts > * {
   position: relative;
   z-index: 1;
 }
@@ -350,7 +354,7 @@ body>* {
 .hero-img {
   width: 100%;
   height: 100%;
-  background-image: url('../images/heroimg.png');
+  background-image: url("../images/heroimg.png");
   background-position: center;
   background-size: cover;
   transition: transform 0.6s ease;
@@ -360,10 +364,12 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,
-      rgba(30, 12, 4, 0.93) 0%,
-      rgba(90, 40, 8, 0.80) 50%,
-      rgba(15, 6, 2, 0.90) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 12, 4, 0.93) 0%,
+    rgba(90, 40, 8, 0.8) 50%,
+    rgba(15, 6, 2, 0.9) 100%
+  );
   z-index: 0;
 }
 
@@ -374,17 +380,19 @@ body>* {
 .hero-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,
-      rgba(30, 12, 4, 0.4) 0%,
-      transparent 55%,
-      rgba(0, 0, 0, 0.15) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 12, 4, 0.4) 0%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
 }
 
 .floating-card {
   position: absolute;
   bottom: 3.5rem;
   left: 1.5rem;
-  background: rgba(15, 6, 2, 0.80);
+  background: rgba(15, 6, 2, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 1.2rem 1.5rem;
@@ -450,10 +458,12 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,
-      rgba(15, 8, 2, 0.90) 0%,
-      rgba(70, 35, 8, 0.82) 50%,
-      rgba(15, 8, 2, 0.90) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 8, 2, 0.9) 0%,
+    rgba(70, 35, 8, 0.82) 50%,
+    rgba(15, 8, 2, 0.9) 100%
+  );
   z-index: 0;
 }
 
@@ -505,7 +515,12 @@ body>* {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(205, 133, 63, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(205, 133, 63, 0.1),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -561,10 +576,12 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg,
-      rgba(20, 8, 2, 0.88) 0%,
-      rgba(100, 45, 15, 0.78) 50%,
-      rgba(20, 8, 2, 0.88) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 8, 2, 0.88) 0%,
+    rgba(100, 45, 15, 0.78) 50%,
+    rgba(20, 8, 2, 0.88) 100%
+  );
   z-index: 0;
 }
 
@@ -635,7 +652,11 @@ body>* {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, rgba(139, 69, 19, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 69, 19, 0.12) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -798,7 +819,6 @@ body>* {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
@@ -872,7 +892,6 @@ body>* {
 }
 
 @media (max-width: 920px) {
-
   .navbar {
     height: auto;
     padding: 0.75rem 1.5rem;

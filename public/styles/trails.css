@@ -5,9 +5,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.trail-card {
+.trail-item {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-direction:row;
   gap: 0.5rem;
   align-items: flex-start;
   background: var(--card-bg);
@@ -16,6 +17,18 @@
   box-shadow: var(--shadow);
   transition: var(--transition);
   cursor: pointer;
+}
+.trail-image-wrap {
+    width: 50%; /* Or whatever width percentage you prefer */
+    display: flex;
+        margin-top: 0.75rem; /* Helps inner images behave nicely */
+}
+
+.trail-image {
+    width: 100%;
+    height: 100%; /* Force it to stretch top-to-bottom */
+    object-fit: cover; /* Keeps the aspect ratio clean without distortion */
+    border-radius: var(--border-radius);
 }
 .trail-card img {
   width: 200px;
@@ -32,7 +45,9 @@
   text-align: center;
   margin-bottom: 3rem;
 }
-
+.trail-card{
+  width: 50%;
+}
 .trails-header h2 {
   color: var(--warm-beige);
   font-size: 2.5rem;
@@ -51,14 +66,13 @@
   font-weight: 600;
 }
 
-.trails-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  justify-items: center;
+  .trails-list {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
-.trail-card:hover {
+.trail-item:hover {
   transform: translateY(-5px);
   border: 3px solid var(--accent-color);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
@@ -328,7 +342,7 @@
   }
 
   .trail-card {
-    width: 100%;
+    width: 50%;
   }
 }
 

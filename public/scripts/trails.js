@@ -18,6 +18,7 @@ const sampleTrails = [
         villageKey:     'trail1_village',
         location:       [22.5726, 88.3639],
         descKey:        'trail1_desc',
+        image: 'https://cdn.sanity.io/images/vk5tclvq/production/b8e3393aa0c18abb3bb4ce48ef2e712813a30f8f-1658x1406.png?auto=format&q=40',
         host: {
             nameKey:    'trail1_host_name',
             roleKey:    'trail1_host_role',
@@ -38,6 +39,7 @@ const sampleTrails = [
         villageKey:     'trail2_village',
         location:       [26.3537, 86.0719],
         descKey:        'trail2_desc',
+        image:          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4sVlLc1XrhZXvPk3haP-bMeL0eqlGsZuRbQ&s',
         host: {
             nameKey:    'trail2_host_name',
             roleKey:    'trail2_host_role',
@@ -58,6 +60,7 @@ const sampleTrails = [
         villageKey:     'trail3_village',
         location:       [21.2787, 81.8661],
         descKey:        'trail3_desc',
+        image:           'https://cdn.shopify.com/s/files/1/0444/9337/3595/files/IUJ_480x480.png?v=1602150639',
         host: {
             nameKey:    'trail3_host_name',
             roleKey:    'trail3_host_role',
@@ -101,6 +104,7 @@ function displayTrails() {
     const trailsList = document.getElementById('trails-list');
 
     trailsList.innerHTML = sampleTrails.map(trail => `
+    <div class="trail-item">
         <div class="trail-card" onclick="showTrailDetails('${trail.id}')">
             <div class="trail-card-header">
                 <div>
@@ -127,7 +131,11 @@ function displayTrails() {
                 </button>
             </div>
         </div>
-    `).join('');
+                     <div class="trail-image-wrap">
+            <img src="${trail.image}" alt="${escapeHtml(tTrail(trail.titleKey))}" class="trail-image" loading="lazy"> 
+                    </div>
+     </div>
+`).join('');
 }
 
 function showTrailDetails(trailId) {
